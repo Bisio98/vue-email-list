@@ -8,18 +8,18 @@ const app = new Vue(
             eMails: [],
         },
         methods: {
-            getRandomNumbers: function() {
+            getRandomMail: function() {
                 for(let i = 0; i < this.maxNumberMail; i++){
-                axios.get('https://flynn.boolean.careers/exercises/api/random/mail',
-                ).then((response) => { 
+                    axios.get('https://flynn.boolean.careers/exercises/api/random/mail',
+                    ).then((response) => { 
                         this.eMails.push(response.data.response)
                     
-                });
+                    });
                 }
             }
         },
         created: function() {
-            this.getRandomNumbers();
+            this.getRandomMail();
         }
     }
 );
